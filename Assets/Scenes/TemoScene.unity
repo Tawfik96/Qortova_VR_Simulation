@@ -872,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269672230812430192, guid: a4cbca814b838a5458720cd2f8d6a501, type: 3}
       propertyPath: simulationSpeed
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2269672230812430192, guid: a4cbca814b838a5458720cd2f8d6a501, type: 3}
       propertyPath: ShapeModule.type
@@ -928,7 +928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269672230812430192, guid: a4cbca814b838a5458720cd2f8d6a501, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 30
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 2269672230812430192, guid: a4cbca814b838a5458720cd2f8d6a501, type: 3}
       propertyPath: InitialModule.startSize.scalar
