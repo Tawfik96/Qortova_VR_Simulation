@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Qortova_VR_Simulation.slnx"
+    "dotnet.defaultSolution": "Characters_Building.slnx"
 }
