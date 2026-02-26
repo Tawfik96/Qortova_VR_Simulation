@@ -64,14 +64,24 @@ public class VFXController : MonoBehaviour
     }
 
 
-    public void TriggerBombVFX()
+   public void TriggerBombVFX()
     {
-        lights.BombFlicker();
+        // Optional: bomb light flicker
+        lights?.BombFlicker();
+
+
+        // do consecutive 3 bursts with short delay to simulate explosion
+         if (sparks != null)
+            sparks.Emit(200); // Initial burst
+            
+        if (smoke != null)
+            smoke.Emit(100); // Initial burst
+     
+
         if (electricitySource != null && BombSound != null)
         {
-            // electricitySource.clip = BombSound;
             electricitySource.PlayOneShot(BombSound);
         }
-    
     }
+    
 }
