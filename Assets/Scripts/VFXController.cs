@@ -64,23 +64,28 @@ public class VFXController : MonoBehaviour
     }
 
 
-   public void TriggerBombVFX()
+    public void TriggerBombVFX()
     {
-        // Optional: bomb light flicker
         lights?.BombFlicker();
 
+        if (sparks != null)
+            sparks.Emit(200);
 
-        // do consecutive 3 bursts with short delay to simulate explosion
-         if (sparks != null)
-            sparks.Emit(200); // Initial burst
-            
         if (smoke != null)
-            smoke.Emit(100); // Initial burst
-     
+            smoke.Emit(100);
 
-        if (electricitySource != null && BombSound != null)
+        if (BombSound != null)
         {
-            electricitySource.PlayOneShot(BombSound);
+            // Create temporary GameObject
+            GameObject tempAudio = new GameObject("TempBombAudio");
+            tempAudio.transform.position = transform.position;
+
+            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+            tempSource.clip = BombSound;
+            tempSource.spatialBlend = 1f; // 3D sound (0 = 2D, 1 = 3D)
+            tempSource.Play();
+
+            Destroy(tempAudio, BombSound.length);
         }
     }
     
